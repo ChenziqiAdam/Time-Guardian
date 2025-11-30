@@ -182,7 +182,7 @@ class GeminiManager {
 
     try {
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-8b" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
       
       const result = await withRetry(() => model.generateContent("Test message"));
       return Boolean(result?.response);
@@ -206,7 +206,7 @@ class GeminiManager {
 
       try {
         const genAI = new GoogleGenerativeAI(apiKey);
-        this.model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-8b" });
+        this.model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
         
         if (this.model) {
           console.log('Gemini model initialized successfully');
